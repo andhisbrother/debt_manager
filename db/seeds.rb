@@ -5,3 +5,8 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+Debt.create(:name => "Kreditka 1",
+			:amount => 500,
+			:repaid => 0,
+			)
