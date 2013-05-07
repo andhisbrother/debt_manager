@@ -3,14 +3,14 @@
 		<th>Nazov</th>
 		<th>Suma</th>
 		<th>Akcia</th>
-		<th>Percento</th>
+		<th class="bar_cell">Percento</th>
 	</tr>
 	<% @debts.each do |debt| %>
 	<tr>
 		<td><%= debt.name %></td>
 		<td><%= debt.amount %></td>
 		<td><%= link_to "Upravit", edit_debt_path(debt) %></td>
-		<td><%= debt.percentage %> &#37</td>
+		<td class="bar_cell"><%= debt.percentage %> &#37 <div class="progress-container"><div class="progress" style="width: 67%"></div></div></td>
 	</tr>
 	<% end %>
 </table><br />

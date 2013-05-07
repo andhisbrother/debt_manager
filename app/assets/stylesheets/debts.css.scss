@@ -7,7 +7,21 @@ td {padding: 10px;
 }
 th {padding: 10px;
 	border: 1px solid;	
-	background-color: silver;
+	background-color: silver;	
+}
 
+.progress-container {
+	width: 170px;
+	height: 25px;
+	border: 1px solid black;
 	
+}
+.progress {
+	height: 25px;
+	background: red;
+	
+
+}
+td.bar_cell {
+	width: 200px;
 }
