@@ -1,0 +1,14 @@
+<%= form_for @debt do |f| %>
+
+	<%= f.label :name, "Nazov" %>
+	<%= f.text_field :name %>
+	<br />
+	<%= f.label :amount, "Suma" %>
+	<%= f.text_field :amount %>
+	<br />
+	<%= f.label :repaid, "Splacam" %>
+	<%= f.text_field :repaid %>
+	<br />
+	<%= f.submit "Odoslat" %>	
+
+<% end %>

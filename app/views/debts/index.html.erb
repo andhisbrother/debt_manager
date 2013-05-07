@@ -1,0 +1,16 @@
+<table class="table_main">
+	<tr>
+		<th>Nazov</th>
+		<th>Suma</th>
+		<th>Akcia</th>
+	</tr>
+	<% @debts.each do |debt| %>
+	<tr>
+		<td><%= debt.name %></td>
+		<td><%= debt.amount %></td>
+		<td><%= link_to "Upravit", edit_debt_path(debt) %></td>
+	</tr>
+	<% end %>
+</table>
+
+<%= link_to "Novy dlh", new_debt_path %>
