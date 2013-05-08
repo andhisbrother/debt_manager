@@ -30,4 +30,10 @@ class DebtsController < ApplicationController
   		render :edit
   	end
   end
+
+  def destroy
+    @debt = Debt.find params[:id]
+    @debt.destroy
+    redirect_to debts_url
+  end
 end
