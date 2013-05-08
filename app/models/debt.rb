@@ -5,7 +5,7 @@ class Debt < ActiveRecord::Base
   validates :amount, :repaid, :presence => true, :numericality => { :greater_than_or_equal_to => 0 } 
 
   def percentage
-  	(self.repaid.to_f / self.amount) * 100
+  	self.repaid / self.amount * 100
   end
 
 end

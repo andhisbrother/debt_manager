@@ -22,7 +22,7 @@ class DebtsController < ApplicationController
 
   def update
   	@debt = Debt.find params[:id]
-  	@debt = :amount - :repaid 
+  	 
   	if 
   		@debt.update_attributes params[:debt]
   		redirect_to debts_url

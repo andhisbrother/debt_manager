@@ -2,6 +2,7 @@
 	<tr>
 		<th>Nazov</th>
 		<th>Suma</th>
+		<th>Splatene</th>
 		<th>Akcia</th>
 		<th class="bar_cell">Percento</th>
 	</tr>
@@ -9,13 +10,12 @@
 	<tr>
 		<td><%= debt.name %></td>
 		<td><%= number_to_currency debt.amount %></td>
+		<td><%= number_to_currency debt.repaid %></td>
 		<td><%= link_to "Upravit", edit_debt_path(debt) %></td>
-		<td class="bar_cell"><%= number_to_percentage debt.percentage, :precision => 2 %><div class="progress-container"><div class="progress" style="width: 67%"></div></div></td>
+		<td class="bar_cell"><%= number_to_percentage debt.percentage, :precision => 2 %><%= content_tag :progress, :nil, :value => debt.repaid, :max => debt.amount %></td>
 	</tr>
 	<% end %>
 </table><br />
 
 <%= link_to "Novy dlh", new_debt_path %>
 
-<!-- <progress value="<%= debt.repaid %>" max="<%= debt.amount %>"> -->
-<!-- content_tag :progress, :nil, :value => debt.repaid, :max => debt.amount	 -->
