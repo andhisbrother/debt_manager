@@ -11,7 +11,7 @@
 		<td><%= debt.name %></td>
 		<td><%= number_to_currency debt.amount %></td>
 		<td><%= number_to_currency debt.repaid %></td>
-		<td><%= link_to "Upravit", edit_debt_path(debt) %>  <%= link_to "Vymaz", debt_path(debt), :method => :delete, data: { confirm: 'Are you sure?' }  %></td>
+		<td><%= link_to "Upravit", edit_debt_path(debt) %> <%= link_to "Destroy", debt_path(debt), :method => :delete, data: { confirm: 'Are you sure?' } %></td>
 		<td class="bar_cell"><%= number_to_percentage debt.percentage, :precision => 2 %><%= content_tag :progress, :nil, :value => debt.repaid, :max => debt.amount %></td>
 	</tr>
 	<% end %>
@@ -20,4 +20,6 @@
 <%= link_to "Novy dlh", new_debt_path %></br>
 
 <p>email</p>
+
+<%= paginate @debts %>
 

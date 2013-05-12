@@ -1,6 +1,6 @@
 class DebtsController < ApplicationController
   def index
-  	@debts = Debt.all
+  	@debts = Debt.page(params[:page])
   end
 
   def new

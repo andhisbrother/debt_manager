@@ -8,4 +8,6 @@ class Debt < ActiveRecord::Base
   	self.repaid / self.amount * 100
   end
 
+  paginates_per 3
+
 end
