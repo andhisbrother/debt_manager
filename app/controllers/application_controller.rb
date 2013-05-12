@@ -9,6 +9,6 @@ end
 		end
 	end
 
-	def current_user
-		User.find(session[:user_id]) if :user_id = nil
-	end
+	# def current_user
+	# 	User.find(session[:user_id]) if :user_id = nil
+	# end

@@ -10,3 +10,8 @@ Debt.create(:name => "Kreditka 1",
 			:amount => 500,
 			:repaid => 0,
 			)
+
+User.create([{:email => "ferko@gmail.com",
+			:password => "998877"
+	}, {:email => "janko@gmail.com",
+		:password => "112233"}])
