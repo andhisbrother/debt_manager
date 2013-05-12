@@ -1,4 +1,7 @@
 class DebtsController < ApplicationController
+  
+  before_filter :require_login
+
   def index
   	@debts = Debt.page(params[:page])
   end

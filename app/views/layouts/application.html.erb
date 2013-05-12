@@ -10,6 +10,12 @@
 
 <h1><%= link_to "Dlhy", root_path %></h1>
 
+<%= link_to "Prihlaste sa", new_session_path %>
+
+<%= flash[:notice] %>
+<%= flash[:error] %>
+<hr/>
+
 <%= yield %>
 
 </body>
