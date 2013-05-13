@@ -9,10 +9,10 @@ class SessionsController < ApplicationController
 		if user.any?
 			session[:user_id] = user.first.id
 
-			flash[:notice] = "Bol si prihlaseny"
+			flash[:notice] = "Boli ste prihlaseny"
 			redirect_to root_path
 		else
-			flash[:error] = "Nespravne prihlasenie"
+			flash[:error] = "Nespravne prihlasenie. Mozno len preklep, skuste znova."
 			render :new
 		end
 	end
