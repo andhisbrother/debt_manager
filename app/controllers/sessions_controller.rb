@@ -5,9 +5,9 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		user = User.where(:email => params[:email], :password => params[:password])
-		if user.any?
-			session[:user_id] = user.first.id
+		@user = User.where(:email => params[:email], :password => params[:password])
+		if @user.any?
+			session[:user_id] = @user.first.id
 
 			flash[:notice] = "Boli ste prihlaseny"
 			redirect_to root_path
