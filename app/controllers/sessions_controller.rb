@@ -5,8 +5,8 @@ class SessionsController < ApplicationController
 	end
 
 	def create
-		users = User.where(:email => params[:email], :password => params[:password])
-		if users.any?
+		user = User.where(:email => params[:email], :password => params[:password])
+		if user.any?
 			session[:user_id] = user.first.id
 
 			flash[:notice] = "Bol si prihlaseny"
