@@ -2,7 +2,13 @@ class DebtsController < ApplicationController
   before_filter :require_login
 
   def index
-  	@debts = Debt.page(params[:page])
+  	# @debts = Debt.where(:user_id => current_user.id).page(params[:page])
+    @debts = current_user.debts.page(params[:page])
+  end
+
+  def show
+    # @debts = Debt.where(:user_id => current_user.id).page(params[:page])
+    @debt = current_user.find params[:id]
   end
 
   def new
@@ -11,6 +17,7 @@ class DebtsController < ApplicationController
 
   def create
   	@debt = Debt.new(params[:debt])
+    @debt.user_id = current_user
   	if @debt.save
   		redirect_to debts_url
   	else
