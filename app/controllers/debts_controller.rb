@@ -1,5 +1,4 @@
 class DebtsController < ApplicationController
-  
   before_filter :require_login
 
   def index
