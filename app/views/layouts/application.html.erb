@@ -10,6 +10,13 @@
 
 <h1><%= link_to "Dlhy", root_path %></h1>
 
+<% if session[:user_id] %>
+	<%= button_to 'Odhlasit', session_path(session), :method => :delete %>
+<% else %>
+	<%= link_to "Prihlasit sa", new_session_path %>
+<% end %>
+
+
 <div class="flash_notice"><%= flash[:notice] %></div>
 <div class="flash_error"><%= flash[:error] %></div>
 <hr/>

@@ -1,6 +1,8 @@
 DebtManager::Application.routes.draw do
   resources :debts
   resources :sessions
+
+  root :to => 'debts#index'
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
@@ -50,7 +52,7 @@ DebtManager::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  root :to => 'debts#index'
+  
 
   # See how all your routes lay out with "rake routes"
 
