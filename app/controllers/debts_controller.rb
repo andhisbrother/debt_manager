@@ -17,7 +17,7 @@ class DebtsController < ApplicationController
 
   def create
   	@debt = Debt.new(params[:debt])
-    @debt.user_id = current_user
+    @debt.user_id = current_user.id
   	if @debt.save
   		redirect_to debts_url
   	else
